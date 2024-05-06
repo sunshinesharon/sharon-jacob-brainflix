@@ -1,0 +1,43 @@
+@font-face {
+    font-family: 'Avner-reg';
+    src: url('../assets/fonts/AvenirNextLTPro-Regular.otf') format("opentype");
+
+}
+
+@font-face {
+    font-family: 'Avner-bold';
+    src: url('../assets/fonts/AvenirNextLTPro-Bold.otf') format("opentype");
+
+}
+
+@font-face {
+    font-family: 'Avner-demi';
+    src: url('../assets/fonts/AvenirNextLTPro-Demi.otf') format("opentype");
+}
+
+@font-face {
+    font-family: 'Avner-next-reg';
+    src: url('../assets/fonts/alternative-files/AvenirNextLTPro.ttf') format("opentype");
+
+}
+
+@font-face {
+    font-family: 'Avner-next-bold';
+    src: url('../assets/fonts/alternative-files/AvenirNextLTProBold.ttf') format("opentype");
+
+}
+
+@font-face {
+    font-family: 'Avner-next-demi';
+    src: url('../assets/fonts/alternative-files/AvenirNextLTProDemi.ttf') format("opentype");
+}
+
+* {
+    font-size: 100%;
+    font-family: 'Avner-reg', 'Avner-next-reg', arial, sans-serif;
+    cursor: pointer;
+}
+
+body {
+    margin: 0;
+}

@@ -1,0 +1,37 @@
+@use 'variables' as *;
+
+@mixin tablet {
+  @media screen and (min-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: $desktop-breakpoint) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width: $mobile-breakpoint) {
+    @content;
+  }
+}
+
+@mixin media($keys...) {
+  @each $key in $keys {
+    @if ($key == phone) {
+      @include phone {
+        @content
+      }
+    } @else if ($key == tablet) {
+      @include tablet {
+        @content
+      }
+    } @else if ($key == desktop) {
+      @include desktop {
+        @content
+      }
+    }
+  }
+}
