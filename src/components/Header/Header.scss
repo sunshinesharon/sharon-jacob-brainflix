@@ -1,0 +1,202 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables'as *;
+@import '../../styles/main.scss';
+
+.header {
+  display: flex;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+
+  @include tablet {
+    width: 700px;
+    justify-content: space-between;
+  }
+
+  @include desktop {
+    width: 1200px;
+    justify-content: space-between;
+  }
+
+  @include mobile {
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+
+  img {
+    max-width: 120px;
+    max-height: 25px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @include mobile {
+    margin: 0.5rem 0.5rem 0.25rem 0.5rem;
+  }
+}
+
+.desktop-header__menu {
+  @include media(tablet, desktop) {
+    display: flex;
+    align-items: center;
+  }
+
+  @include mobile {
+    display: none;
+  }
+}
+
+.desktop-header__menu__search {
+  position: relative;
+  margin: 0.5rem;
+
+  img {
+    position: absolute;
+    left: 0;
+    transform: translate(0, -50%);
+    top: 50%;
+    padding-left: 15px;
+  }
+
+  input {
+    // min-width: 240px;
+    border-radius: 4px;
+    background-color: $Alabaster;
+    border: 1px solid $Mercury;
+    color: $BrainFlix-Black;
+    height: 40px;
+    padding-left: 40px;
+
+    &::placeholder {
+      color: $BrainFlix-Black;
+    }
+  }
+}
+
+.desktop-header__menu__upload {
+  margin: 0 0.5rem;
+
+  button {
+    background-color: $BrainFlix-Blue;
+    border: $BrainFlix-Blue;
+    border-radius: 4px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $White;
+    text-align: center;
+    padding-right: 32px;
+    padding-left: 50px;
+    position: relative;
+
+    img {
+      position: absolute;
+      left: 10px;
+
+    }
+
+    span {
+      margin-right: auto;
+    }
+  }
+}
+
+.desktop-header__menu__profile {
+  margin: 0 0.5rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: url(../../assets/images/Mohan-muruge.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.mobile-header__menu__profile {
+  margin: 0 0.5rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: url(../../assets/images/Mohan-muruge.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-width: 36px;
+}
+
+.mobile-header__menu {
+  @include media(desktop, tablet) {
+    display: none;
+  }
+
+  @include mobile {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.mobile-header__menu__container {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.25rem 0;
+  flex-wrap: wrap;
+}
+
+.mobile-header__menu__search {
+  position: relative;
+  margin: 0.25rem 0;
+
+  img {
+    position: absolute;
+    left: 0;
+    transform: translate(0, -50%);
+    top: 50%;
+    padding-left: 15px;
+  }
+
+  input {
+    border-radius: 4px;
+    background-color: $Alabaster;
+    border: 1px solid $Mercury;
+    color: $BrainFlix-Black;
+    height: 36px;
+    padding-left: 40px;
+
+    &::placeholder {
+      color: $BrainFlix-Black;
+    }
+
+  }
+}
+
+.mobile-header__menu__upload {
+  margin: 0.25rem 0;
+
+  button {
+    background-color: $BrainFlix-Blue;
+    border: $BrainFlix-Blue;
+    border-radius: 4px;
+    height: 40px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $White;
+    text-align: center;
+    padding-right: 32px;
+    padding-left: 50px;
+    position: relative;
+
+    img {
+      position: absolute;
+      left: 10px;
+    }
+  }
+}
