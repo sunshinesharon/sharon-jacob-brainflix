@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './App.scss';
-import Header from './components/Component/Header';
-import Comments from './components/Component/Comment';
+import Header from './components/Header/Header';
+import Comments from './components/Comments/Comment';
 import viewsIcon from './assets/images/icons/views.svg'
 import likesIcon from './assets/images/icons/likes.svg'
 import videosData from './data/videos.json';
