@@ -1,0 +1,238 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.upload-video {
+    display: flex;
+    flex-wrap: wrap;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+
+    @include tablet {
+        width: 700px;
+        justify-content: space-between;
+    }
+
+    @include desktop {
+        width: 1200px;
+        justify-content: space-between;
+    }
+
+    @include mobile {
+        justify-content: center;
+        flex-direction: column;
+    }
+}
+
+.upload-video__title {
+    padding: 1rem 0;
+    flex: 0 0 100%;
+
+    @include media(tablet, desktop) {
+        border-bottom: 1px solid $Mercury;
+    }
+
+    h1 {
+        @include media(desktop, tablet) {
+            font-size: 33px;
+            line-height: 44px;
+            font-family: 'Avner-bold';
+            font-weight: 700;
+        }
+
+        @include mobile {
+            font-size: 24px;
+            line-height: 32px;
+            font-family: 'Avner-bold';
+            font-weight: 700;
+        }
+    }
+}
+
+.upload-video__details {
+    display: flex;
+    padding: 1rem 0;
+    width: 100%;
+
+    @include media(desktop, tablet) {
+        border-bottom: 1px solid $Mercury;
+    }
+
+    @include media(mobile, tablet) {
+        flex-direction: column;
+    }
+}
+
+.details__thumbnail-container {
+    @include media(tablet, desktop) {
+        margin-right: 1rem;
+    }
+}
+
+.thumbnail-container__label {
+    margin: 0;
+    font-size: 12px;
+    line-height: 20px;
+    color: $Silver;
+}
+
+.thumbnail-container__image {
+    border-radius: 4px;
+    padding: 10px 0;
+
+    @include media(desktop, tablet) {
+        width: 350px;
+    }
+
+    @include mobile {
+        width: 100%;
+    }
+}
+
+.details__info-container {
+    flex-grow: 1;
+}
+
+.info-container__input {
+    display: flex;
+    flex-direction: column;
+
+    @include media(tablet, desktop) {
+        margin: 0 0 1rem 1rem;
+    }
+
+    @include mobile {
+        margin: 0 0 1rem 0;
+    }
+
+    input {
+        // min-width: 240px;
+        border-radius: 4px;
+        background-color: $Alabaster;
+        border: 1px solid $Mercury;
+        color: $BrainFlix-Black;
+        padding: 0 12px;
+
+        &::placeholder {
+            color: $BrainFlix-Black;
+        }
+
+        @include media(desktop, tablet) {
+            height: 40px;
+        }
+
+        @include mobile {
+            height: 36px;
+        }
+    }
+
+    textarea {
+        // min-width: 240px;
+        border-radius: 4px;
+        background-color: $Alabaster;
+        border: 1px solid $Mercury;
+        color: $BrainFlix-Black;
+        padding: 10px 12px;
+
+        &::placeholder {
+            color: $BrainFlix-Black;
+            margin: 1rem;
+        }
+
+        @include media(desktop, tablet) {
+            height: 100px;
+        }
+
+        @include mobile {
+            height: 100px;
+        }
+    }
+
+    label {
+        font-size: 12px;
+        line-height: 20px;
+        color: $Silver;
+    }
+}
+
+.upload-video__footer {
+    width: 100%;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: flex-end;
+
+    @include mobile {
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+    }
+}
+
+.footer__submit-button {
+    @include mobile {
+        flex: 0 0 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    button {
+        background-color: $BrainFlix-Blue;
+        border: $BrainFlix-Blue;
+        border-radius: 4px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $White;
+        text-align: center;
+        padding-right: 32px;
+        padding-left: 50px;
+        position: relative;
+        cursor: pointer;
+
+        @include mobile {
+            width: 100%;
+        }
+
+        img {
+            position: absolute;
+            left: 10px;
+
+        }
+
+        span {
+            margin-right: auto;
+
+            @include mobile {
+                margin-left: auto;
+            }
+        }
+    }
+}
+
+.footer__cancel-button {
+    @include mobile {
+        flex: 0 0 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    button {
+        background-color: $White;
+        border: $BrainFlix-Blue;
+        border-radius: 4px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $BrainFlix-Blue;
+        text-align: center;
+        padding-right: 32px;
+        padding-left: 50px;
+        position: relative;
+        cursor: pointer;
+        font-weight: 700;
+    }
+}

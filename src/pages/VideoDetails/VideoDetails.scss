@@ -1,0 +1,258 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+
+.video-details {
+    display: flex;
+  
+    @include mobile {
+      flex-direction: column;
+      padding: 0 1rem;
+    }
+  
+    @include media(desktop, tablet) {
+      flex-direction: row;
+      padding: 0 2rem;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  
+  .video-details__details {
+    flex: 1;
+  
+    @include media(desktop, tablet) {
+      border-right: 1px solid $Mercury;
+    }
+  }
+  
+  .video-details__details__video {
+    border-bottom: 1px solid $Mercury;
+  }
+  
+  .video-details__details__video__title {
+    @include media(tablet, desktop) {
+      font-size: 33px;
+      line-height: 44px;
+      font-weight: 700;
+      font-family: 'Avner-bold';
+    }
+  
+    @include mobile {
+      font-size: 24px;
+      line-height: 32px;
+      font-weight: 700;
+      font-family: 'Avner-bold';
+    }
+  }
+  
+  .video-details__details__video__otherdetails {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .video-details__details__video__otherdetails__section {
+    display: flex;
+    align-items: center;
+
+    @include media(desktop, tablet){
+        flex-direction: row;
+    }
+
+    @include mobile{
+        flex-direction: column;
+    }
+  
+    h5,
+    p {
+      margin: 0 15px 15px 0;
+    }
+  
+    h5 {
+      @include media(desktop, tablet) {
+        font-size: 18px;
+        line-height: 22px;
+        font-family: 'Avner-bold';
+        font-weight: 700;
+      }
+  
+      @include mobile {
+        font-size: 16px;
+        line-height: 18px;
+        font-family: 'Avner-bold';
+        font-weight: 700;
+      }
+    }
+  
+    p {
+      color: $Silver;
+      display: flex;
+      align-items: center;
+  
+      img {
+        margin: 0 5px;
+      }
+    }
+  }
+  
+  .video-details__details__description {
+    p {
+      line-height: 22px;
+      font-weight: 600;
+      margin-right: 1rem;
+    }
+  }
+
+  
+
+.comments-section__content__card {
+    display: flex;
+    margin: 1rem 0;
+    border-top: 1px solid $Mercury;
+    padding-top: 1rem;
+  
+    &:last-child {
+      border-bottom: 1px solid $Mercury;
+      padding-bottom: 1rem;
+    }
+  }
+  
+  
+  .comments-section__content__info {
+    margin: 0 1rem;
+    width: 100%;
+  }
+  
+  .comments-section__content__info__header {
+    display: flex;
+    justify-content: space-between;
+    // padding: 0.5rem 0;
+  }
+  
+  .comments-section__content__info__comment {
+    font-family: 'Avner-reg';
+    font-weight: 600;
+  }
+  
+  .comments-section__content__info__username {
+    font-family: 'Avner-demi';
+    margin-bottom: 0;
+  }
+  
+  .comments-section__content__info__timestamp {
+    font-family: 'Avner-reg';
+    color: $Silver;
+    margin-bottom: 0;
+  }
+  
+  .avatar {
+    border-radius: 50%;
+  
+    @include mobile {
+      height: 36px;
+      width: 36px;
+    }
+  
+    @include media(desktop, tablet) {
+      height: 48px;
+      width: 48px;
+    }
+  }
+  
+  .comments-section__title {
+    color: $BrainFlix-DarkBlack;
+    font-family: 'Avner-demi'
+  }
+  
+  .comments-section__content__profile {
+    margin-top: 16px;
+    margin-left: 15px;
+  
+    span {
+      display: block;
+      background-color: $Mercury;
+      @extend .avatar;
+    }
+  }
+  
+  .comments-section__newcomment {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+  }
+  
+  .newcomment__button {
+    margin: 0 0.5rem;
+  
+    button {
+      background-color: $BrainFlix-Blue;
+      border: $BrainFlix-Blue;
+      border-radius: 4px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $White;
+      text-align: center;
+      padding-right: 32px;
+      padding-left: 50px;
+      position: relative;
+      cursor: pointer;
+  
+      img {
+        position: absolute;
+        left: 10px;
+  
+      }
+  
+      span {
+        margin-right: auto;
+      }
+    }
+  }
+  
+  .newcomment__input {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin: 0 1rem;
+  
+    input {
+      // min-width: 240px;
+      border-radius: 4px;
+      background-color: $Alabaster;
+      border: 1px solid $Mercury;
+      color: $BrainFlix-Black;
+      padding: 0 12px;
+      &::placeholder {
+        color: $BrainFlix-Black;
+      }
+  
+      @include media(desktop, tablet){
+        height: 40px;
+      }
+  
+      @include mobile{
+        height: 36px;
+      }
+    }
+  
+    label{
+      font-size: 12px;
+      line-height: 20px;
+      color: $Silver;
+    }
+  }
+  
+  .newcomment__profile {
+    margin: 0 0.5rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: url(../../assets/images/Mohan-muruge.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
