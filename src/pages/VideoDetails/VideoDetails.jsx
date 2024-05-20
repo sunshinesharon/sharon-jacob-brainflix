@@ -72,6 +72,12 @@ const VideoDetails = () => {
         })
     }
 
+    const likeVideo = () => {
+        axios.put(`${baseUrl}/videos/${selectedVideo.id}/likes`).then((res) => {
+            setSelectedVideo(res.data);
+        })
+    }
+
     return (
         <main>
             <Header />
@@ -87,7 +93,7 @@ const VideoDetails = () => {
                             </div>
                             <div className='video-details__details__video__otherdetails__section'>
                                 <p><img src={viewsIcon} alt='views-icon' />{selectedVideo?.views}</p>
-                                <p><img src={likesIcon} alt='views-icon' />{selectedVideo?.likes}</p>
+                                <p><img src={likesIcon} alt='views-icon' onClick={() => { likeVideo() }} />{selectedVideo?.likes}</p>
                             </div>
                         </div>
                     </div>
